@@ -11,7 +11,7 @@ config {
 
 select
   stg_users.user_id,
-  stg_users.age,
+  ${commons.ageBucket("stg_users.age")} as age,
   stg_users.creation_date,
   stg_users.user_tenure,
   count(distinct stg_badges.badge_id) as badge_count,
